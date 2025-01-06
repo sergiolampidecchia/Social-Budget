@@ -1,0 +1,129 @@
+### Create a new session (login)
+POST http://localhost:3001/api/sessions
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+###
+POST http://localhost:3001/api/sessions
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "user1"
+}
+###
+
+###
+POST http://localhost:3001/api/sessions
+Content-Type: application/json
+
+{
+  "username": "user2",
+  "password": "user2"
+}
+###
+
+### Get current session (check if authenticated)
+GET http://localhost:3001/api/sessions/current
+
+###
+
+### Delete current session (logout)
+DELETE http://localhost:3001/api/sessions/current
+
+###
+
+### Update user information
+PUT http://localhost:3001/api/users/admin
+Content-Type: application/json
+
+{
+  "name": "Admin",
+  "surname": "User",
+  "address": "123 Admin St",
+  "birthday": "1970-01-01"
+}
+
+###
+
+### Create a new proposal
+POST http://localhost:3001/api/proposals
+Content-Type: application/json
+
+{
+  "description": "Proposal 1",
+  "budget": 1000
+}
+
+###
+
+### Get proposals by UserId
+GET http://localhost:3001/api/proposals/id
+
+### Get all proposals
+GET http://localhost:3001/api/proposals
+
+###
+
+### Update a proposal
+PUT http://localhost:3001/api/proposals/178
+
+Content-Type: application/json
+{
+  "description": "Updated proposal 1 admin",
+  "budget": 1000
+}
+
+###
+
+### Delete a proposal
+DELETE http://localhost:3001/api/proposals/179
+
+###
+
+### Add a preference
+POST http://localhost:3001/api/preferences
+Content-Type: application/json
+
+{
+  "proposalId": 181,
+  "score": 3
+}
+
+###
+
+### Get all preferences
+GET http://localhost:3001/api/preferences
+
+###
+
+###
+GET http://localhost:3001/api/preferences/2
+
+### Delete a preference
+DELETE http://localhost:3001/api/preferences/3
+
+###
+
+### Change phase
+POST http://localhost:3001/api/phase
+
+###
+
+### Set budget
+POST http://localhost:3001/api/budget
+Content-Type: application/json
+
+{
+  "newBudget": 10000
+}
+
+### Reset config
+PUT http://localhost:3001/api/reset
+
+
+
